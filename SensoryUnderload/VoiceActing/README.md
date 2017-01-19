@@ -1,0 +1,1 @@
+Used to store voice acting sound files for the game
