@@ -24,18 +24,22 @@
   <sprites name="sprites">
     <sprite>sprites\spr_unpressedbutton</sprite>
     <sprite>sprites\spr_pressedbutton</sprite>
+    <sprite>sprites\spr_invisbutton</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\bg_black</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\start_game.gml</script>
-    <script>scripts\convo1.gml</script>
+    <script>scripts\scr_start_game.gml</script>
+    <script>scripts\scr_convo1.gml</script>
+    <script>scripts\scr_test_sound_test.gml</script>
+    <script>scripts\scr_test_end.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_button</object>
     <object>objects\obj_sounds</object>
+    <object>objects\obj_level1starter</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\rm_start</room>
