@@ -11,6 +11,15 @@
     <sound>sound\snd_button4</sound>
     <sound>sound\snd_button5</sound>
     <sound>sound\snd_button6</sound>
+    <sounds name="sam">
+      <sound>sound\snd_tmpsam</sound>
+    </sounds>
+    <sounds name="bob">
+      <sound>sound\snd_tmpbob</sound>
+    </sounds>
+    <sounds name="friend">
+      <sound>sound\snd_tmpfriend</sound>
+    </sounds>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_unpressedbutton</sprite>
@@ -22,6 +31,7 @@
   <paths name="paths"/>
   <scripts name="scripts">
     <script>scripts\start_game.gml</script>
+    <script>scripts\convo1.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_button</object>
