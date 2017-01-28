@@ -8,6 +8,11 @@ repeat(6)
         trueCount++;
     }
 }
+//if (trueCount == 3)
+//{
+ //   audio_play_sound(FirstThreeDown, 1, false);
+  //  while(audio_is_playing(FirstThreeDown)){}
+//}
 if (trueCount == 6)
 {
     scr_test_end();

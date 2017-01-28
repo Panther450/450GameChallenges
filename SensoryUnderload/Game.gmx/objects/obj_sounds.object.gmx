@@ -28,6 +28,8 @@
             <string>testList = ds_list_create();
 ds_list_add(testList, false, false, false, false, false, false);
 testDone = false;
+
+
 </string>
           </argument>
         </arguments>

@@ -13,13 +13,92 @@
     <sound>sound\snd_button6</sound>
     <sounds name="sam">
       <sound>sound\snd_tmpsam</sound>
+      <sound>sound\ImBlindWhatDo</sound>
+      <sound>sound\IThinkSoStillBeeps</sound>
+      <sound>sound\LetsDoThisBob</sound>
+      <sound>sound\YaIThinkRight</sound>
+      <sound>sound\GoodIdea</sound>
+      <sound>sound\WhatExpectBlindBombs</sound>
+      <sound>sound\OkBoss</sound>
+      <sound>sound\DontWannaRush</sound>
+      <sound>sound\StartButtonBar</sound>
+      <sound>sound\Check</sound>
+      <sound>sound\YouTryBlind</sound>
+      <sound>sound\ShouldntThatBeLastOne</sound>
+      <sound>sound\WhoAreYou</sound>
+      <sound>sound\WeDidIt</sound>
     </sounds>
     <sounds name="bob">
       <sound>sound\snd_tmpbob</sound>
+      <sound>sound\RememberTraining</sound>
+      <sound>sound\DoneSixButtons</sound>
+      <sound>sound\FirstThreeDown</sound>
+      <sound>sound\Fuck</sound>
+      <sounds name="Hints">
+        <sound>sound\snd_above_last</sound>
+        <sound>sound\snd_beginning_1</sound>
+        <sound>sound\snd_beginning_2</sound>
+        <sound>sound\snd_beginning_3</sound>
+        <sound>sound\snd_below</sound>
+        <sound>sound\snd_button_center_1</sound>
+        <sound>sound\snd_button_center_2</sound>
+        <sound>sound\snd_button_center_3</sound>
+        <sound>sound\snd_button_center_no</sound>
+        <sound>sound\snd_bottom_left_1</sound>
+        <sound>sound\snd_bottom_left_2</sound>
+        <sound>sound\snd_bottom_left_3</sound>
+        <sound>sound\snd_bottom_left_no</sound>
+        <sound>sound\snd_bottom_right_1</sound>
+        <sound>sound\snd_bottom_right_2</sound>
+        <sound>sound\snd_bottom_right_3</sound>
+        <sound>sound\snd_bottom_right_no</sound>
+        <sound>sound\snd_ending</sound>
+        <sound>sound\snd_left_from</sound>
+        <sound>sound\snd_right_from</sound>
+        <sound>sound\snd_top_center_1</sound>
+        <sound>sound\snd_top_center_2</sound>
+        <sound>sound\snd_top_center_3</sound>
+        <sound>sound\snd_top_center_no</sound>
+        <sound>sound\snd_top_left_1</sound>
+        <sound>sound\snd_top_left_2</sound>
+        <sound>sound\snd_top_left_3</sound>
+        <sound>sound\snd_top_left_no</sound>
+        <sound>sound\snd_top_right_1</sound>
+        <sound>sound\snd_top_right_2</sound>
+        <sound>sound\snd_top_right_3</sound>
+        <sound>sound\snd_top_right_no</sound>
+      </sounds>
+      <sound>sound\FuckWhatHappened</sound>
+      <sound>sound\GiveThisAShot</sound>
+      <sound>sound\SameAsLastTime</sound>
+      <sound>sound\HurryUp</sound>
+      <sound>sound\IMeantMe</sound>
+      <sound>sound\TopLeftButton</sound>
+      <sound>sound\Safeguard</sound>
+      <sound>sound\NoNotThatOne</sound>
+      <sound>sound\NotQuite</sound>
+      <sound>sound\OhThankGod</sound>
+      <sound>sound\HowAboutThisOne</sound>
+      <sound>sound\PressSix</sound>
+      <sound>sound\SamYouOkay</sound>
+      <sound>sound\ShitGetStarted</sound>
+      <sound>sound\NewDesign</sound>
+      <sound>sound\TestRun</sound>
+      <sound>sound\ThatsTheThing</sound>
+      <sound>sound\TurnKnob</sound>
+      <sound>sound\WhatMeanBlind</sound>
+      <sound>sound\YouGotThis</sound>
     </sounds>
     <sounds name="friend">
       <sound>sound\snd_tmpfriend</sound>
+      <sound>sound\BobsReplacement</sound>
+      <sound>sound\Goodbye</sound>
+      <sound>sound\GoodJobKid</sound>
+      <sound>sound\DoWhatISay</sound>
     </sounds>
+    <sound>sound\snd_heartbeat</sound>
+    <sound>sound\snd_explosion</sound>
+    <sound>sound\snd_breathing</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_unpressedbutton</sprite>
@@ -35,6 +114,9 @@
     <script>scripts\scr_convo1.gml</script>
     <script>scripts\scr_test_sound_test.gml</script>
     <script>scripts\scr_test_end.gml</script>
+    <scripts name="tutorial">
+      <script>scripts\scr_tutorial_1.gml</script>
+    </scripts>
   </scripts>
   <objects name="objects">
     <object>objects\obj_button</object>
