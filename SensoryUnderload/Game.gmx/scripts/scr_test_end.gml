@@ -24,8 +24,5 @@ while(audio_is_playing(TestRun)){}
 audio_play_sound(OkBoss, 1, false);
 while(audio_is_playing(OkBoss)){}
 
-audio_play_sound(GiveThisAShot, 1, false);
-while(audio_is_playing(GiveThisAShot)){}
-
-global.currentLevel = 1;
+global.currentLevel = 0;
 scr_tutorial_1();

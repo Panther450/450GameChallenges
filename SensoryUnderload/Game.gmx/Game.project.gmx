@@ -117,6 +117,8 @@
     <scripts name="tutorial">
       <script>scripts\scr_tutorial_1.gml</script>
     </scripts>
+    <script>scripts\got_correct_button.gml</script>
+    <script>scripts\got_incorrect_button.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\obj_button</object>
