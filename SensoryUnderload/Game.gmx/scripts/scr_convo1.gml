@@ -15,9 +15,9 @@ audio_play_sound(WhatMeanBlind, 1, false);
 while(audio_is_playing(WhatMeanBlind)){}
 
 audio_play_sound(snd_button1, 1, false);// buttons mashed together (TODO)
-audio_play_sound(snd_button2, 1, false);
-audio_play_sound(snd_button3, 1, false);
-while(audio_is_playing(snd_button3)){}
+count = 0;
+while(count < 5000000)
+    count++;
 
 
 audio_play_sound(IThinkSoStillBeeps, 1, false);
