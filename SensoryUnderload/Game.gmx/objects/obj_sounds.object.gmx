@@ -27,8 +27,8 @@
             <kind>1</kind>
             <string>testList = ds_list_create();
 ds_list_add(testList, false, false, false, false, false, false);
-//testDone = true; //TODO: REMOVE
-testDone = false;
+testDone = true; //TODO: REMOVE
+//testDone = false;
 
 global.expectedButton = -1;
 

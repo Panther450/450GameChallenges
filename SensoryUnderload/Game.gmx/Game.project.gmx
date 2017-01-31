@@ -40,10 +40,10 @@
         <sound>sound\snd_beginning_2</sound>
         <sound>sound\snd_beginning_3</sound>
         <sound>sound\snd_below</sound>
-        <sound>sound\snd_button_center_1</sound>
-        <sound>sound\snd_button_center_2</sound>
-        <sound>sound\snd_button_center_3</sound>
-        <sound>sound\snd_button_center_no</sound>
+        <sound>sound\snd_bottom_center_1</sound>
+        <sound>sound\snd_bottom_center_2</sound>
+        <sound>sound\snd_bottom_center_3</sound>
+        <sound>sound\snd_bottom_center_no</sound>
         <sound>sound\snd_bottom_left_1</sound>
         <sound>sound\snd_bottom_left_2</sound>
         <sound>sound\snd_bottom_left_3</sound>
@@ -88,6 +88,8 @@
       <sound>sound\TurnKnob</sound>
       <sound>sound\WhatMeanBlind</sound>
       <sound>sound\YouGotThis</sound>
+      <sound>sound\BestNewsAllDay</sound>
+      <sound>sound\NeedHelpHitC</sound>
     </sounds>
     <sounds name="friend">
       <sound>sound\snd_tmpfriend</sound>
@@ -98,6 +100,10 @@
     </sounds>
     <sound>sound\snd_heartbeat</sound>
     <sound>sound\snd_explosion</sound>
+    <sound>sound\snd_ticking_bomb</sound>
+    <sound>sound\snd_bob_knockout</sound>
+    <sound>sound\snd_knob_click</sound>
+    <sound>sound\snd_sam_groan</sound>
     <sound>sound\snd_breathing</sound>
   </sounds>
   <sprites name="sprites">
