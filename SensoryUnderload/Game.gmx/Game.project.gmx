@@ -106,6 +106,12 @@
     <sound>sound\snd_sam_groan</sound>
     <sound>sound\snd_breathing</sound>
     <sound>sound\snd_white_noise</sound>
+    <sound>sound\snd_chunk_1</sound>
+    <sound>sound\snd_chunk_2</sound>
+    <sound>sound\snd_chunk_3</sound>
+    <sound>sound\snd_chunk_4</sound>
+    <sound>sound\snd_chunk_5</sound>
+    <sound>sound\snd_chunk_6</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_unpressedbutton</sprite>

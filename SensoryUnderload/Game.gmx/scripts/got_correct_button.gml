@@ -71,6 +71,10 @@ else
     show_debug_message("Game Over! You did it!");
     audio_stop_sound(snd_ticking_bomb);
     
+    audio_play_sound(snd_chunk_6, 1, false);
+    while(audio_is_playing(snd_chunk_6)){}
+    
+    /*
     audio_play_sound(FuckWhatHappened, 1, false);
     while(audio_is_playing(FuckWhatHappened)){}
     
@@ -78,7 +82,7 @@ else
     while(audio_is_playing(WeDidIt)){}
 
     audio_play_sound(IMeantMe, 1, false);
-    while(audio_is_playing(IMeantMe)){}
+    while(audio_is_playing(IMeantMe)){}*/
 }
 
 show_debug_message(" ");

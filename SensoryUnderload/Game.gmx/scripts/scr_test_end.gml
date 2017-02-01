@@ -1,7 +1,7 @@
 // test is over, move to tutorial
 
 show_debug_message("test over");
-
+/*
 
 audio_play_sound(DoneSixButtons, 1, false);
 while(audio_is_playing(DoneSixButtons)){}
@@ -23,6 +23,13 @@ while(audio_is_playing(TestRun)){}
 
 audio_play_sound(OkBoss, 1, false);
 while(audio_is_playing(OkBoss)){}
+*/
+
+audio_play_sound(snd_chunk_2, 1, false);
+while(audio_is_playing(snd_chunk_2)){}
+
+audio_play_sound(snd_chunk_4, 1, false);
+while(audio_is_playing(snd_chunk_4)){}
 
 global.currentLevel = 0;
 scr_tutorial_1();

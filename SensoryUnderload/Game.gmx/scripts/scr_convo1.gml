@@ -1,5 +1,7 @@
 // ringing sound
-audio_play_sound(SamYouOkay, 1, false);
+audio_play_sound(snd_chunk_1, 1, false);
+while(audio_is_playing(snd_chunk_1)){}
+/*audio_play_sound(SamYouOkay, 1, false);
 while(audio_is_playing(SamYouOkay)){}
 
 audio_play_sound(snd_sam_groan, 1, false);
@@ -43,4 +45,4 @@ while(audio_is_playing(snd_knob_click)){}
 
 audio_play_sound(PressSix, 1, false);
 while(audio_is_playing(PressSix)){}
-
+*/
