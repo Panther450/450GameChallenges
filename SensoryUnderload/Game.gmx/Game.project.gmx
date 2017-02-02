@@ -112,6 +112,7 @@
     <sound>sound\snd_chunk_4</sound>
     <sound>sound\snd_chunk_5</sound>
     <sound>sound\snd_chunk_6</sound>
+    <sound>sound\snd_victory</sound>
   </sounds>
   <sprites name="sprites">
     <sprite>sprites\spr_unpressedbutton</sprite>
@@ -129,6 +130,16 @@
     <script>scripts\scr_test_end.gml</script>
     <scripts name="tutorial">
       <script>scripts\scr_tutorial_1.gml</script>
+      <script>scripts\level0sub0.gml</script>
+      <script>scripts\level0sub1.gml</script>
+      <script>scripts\level0sub2.gml</script>
+      <script>scripts\level0sub3.gml</script>
+      <script>scripts\level1sub0.gml</script>
+      <script>scripts\level1sub1.gml</script>
+      <script>scripts\level1sub2.gml</script>
+      <script>scripts\level2sub0.gml</script>
+      <script>scripts\level2sub1.gml</script>
+      <script>scripts\level2sub2.gml</script>
     </scripts>
     <script>scripts\got_correct_button.gml</script>
     <script>scripts\play_next_sequence.gml</script>

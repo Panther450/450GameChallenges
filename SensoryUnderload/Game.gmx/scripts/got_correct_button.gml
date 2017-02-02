@@ -71,8 +71,15 @@ else
     show_debug_message("Game Over! You did it!");
     audio_stop_sound(snd_ticking_bomb);
     
-    audio_play_sound(snd_chunk_6, 1, false);
-    while(audio_is_playing(snd_chunk_6)){}
+    global.gameover = true;
+    
+    audio_play_sound(snd_victory, 1, false);
+     
+    var len;
+    len = audio_sound_length(snd_victory);
+    audio_play_sound(snd_victory, 1, false);
+    global.soundLength = room_speed * len;
+            
     
     /*
     audio_play_sound(FuckWhatHappened, 1, false);

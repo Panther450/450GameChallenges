@@ -1,6 +1,12 @@
 // ringing sound
+
+
+var len;
+len = audio_sound_length(snd_chunk_1);
 audio_play_sound(snd_chunk_1, 1, false);
-while(audio_is_playing(snd_chunk_1)){}
+global.soundLength = room_speed * len;
+
+//while(audio_is_playing(snd_chunk_1)){}
 /*audio_play_sound(SamYouOkay, 1, false);
 while(audio_is_playing(SamYouOkay)){}
 

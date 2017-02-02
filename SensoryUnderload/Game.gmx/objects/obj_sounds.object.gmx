@@ -30,6 +30,13 @@ ds_list_add(testList, false, false, false, false, false, false);
 //testDone = true; //TODO: REMOVE
 testDone = false;
 
+global.allowButtonPress = false;
+global.soundLength = -1;
+global.exception = false;
+global.startingLevels = false;
+global.gameover = false;
+global.startSequences = false;
+
 global.expectedButton = -1;
 
 global.restarting = 0;
@@ -37,6 +44,8 @@ global.restarting = 0;
 global.currentLevel = 0;
 global.currentSub = 0;
 global.currentSubSub = 0;
+
+global.currentSound = -1;
 
 // Q=0, W=1, E=2, A=3, S=4, D=5
 
@@ -96,7 +105,262 @@ global.endArray[2,4] = 0;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>global.allowButtonPress = true;
+show_debug_message("You can press buttons now");
+
+if (global.gameover)
+{
+    audio_play_sound(snd_chunk_6, 1, false);
+    global.startingLevels = false;
+}
+
+
+if (global.startingLevels)
+{
+
+switch (global.currentLevel)
+{
+  case 0:
+    switch (global.currentSub)
+    {
+      case 0:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 2)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level0sub0();
+        }
+        break;
+      case 1:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 2)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level0sub1();
+        }
+        break;
+      case 2:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 3)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level0sub2();
+        }
+        break;
+      case 3:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 3)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level0sub3();
+        }
+        break;
+    }
+    break;
+  case 1:
+    switch (global.currentSub)
+    {
+      case 0:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 2)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level1sub0();
+        }
+        break;
+      case 1:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 2)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level1sub1();
+        }
+        break;
+      case 2:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 3)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level1sub2();
+        }
+        break;
+    }
+    break;
+  case 2:
+    switch (global.currentSub)
+    {
+      case 0:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 3)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level2sub0();
+        }
+        break;
+      case 1:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 4)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level2sub1();
+        }
+        break;
+      case 2:
+        global.currentSound += 1;
+        if (global.currentSound &gt; 4)
+        {
+            global.currentSound = -1
+        }
+        else
+        {
+            level2sub2();
+        }
+        break;
+    }
+    break;
+}
+
+}
+
+if (global.startSequences)
+{
+    global.startingLevels = true;
+    global.startSequences = false;
+    play_next_sequence();
+}
+
+if (global.exception)
+{
+    global.exception = false;
+    
+    global.allowButtonPress = false;
+    
+    var len;
+    len = audio_sound_length(snd_chunk_4);
+    audio_play_sound(snd_chunk_4, 1, false);
+    global.soundLength = room_speed * len;
+
+    global.expectedButton = global.tutorialArray[global.currentSub,global.currentSubSub];
+    
+    
+    global.currentLevel = 0;
+    global.startSequences = true;
+    //scr_tutorial_1();
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if (global.soundLength &gt; -1)
+{
+    global.allowButtonPress = false;
+    alarm[0] = global.soundLength;
+    global.soundLength = -1;
+}
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="9" enumb="87">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.allowButtonPress</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -223,8 +487,56 @@ show_debug_message("testDone? -- " + string(testDone));
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="9" enumb="83">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.allowButtonPress</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -351,8 +663,56 @@ show_debug_message("testDone? -- " + string(testDone));
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="9" enumb="81">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.allowButtonPress</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -479,8 +839,56 @@ show_debug_message("testDone? -- " + string(testDone));
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="9" enumb="69">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.allowButtonPress</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -607,8 +1015,56 @@ show_debug_message("testDone? -- " + string(testDone));
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="9" enumb="68">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.allowButtonPress</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -735,8 +1191,56 @@ show_debug_message("testDone? -- " + string(testDone));
           </argument>
         </arguments>
       </action>
+      <action>
+        <libid>1</libid>
+        <id>424</id>
+        <kind>2</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
     </event>
     <event eventtype="9" enumb="65">
+      <action>
+        <libid>1</libid>
+        <id>408</id>
+        <kind>0</kind>
+        <userelative>0</userelative>
+        <isquestion>-1</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>1</exetype>
+        <functionname>action_if</functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>0</kind>
+            <string>global.allowButtonPress</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>422</id>
+        <kind>1</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+      </action>
       <action>
         <libid>1</libid>
         <id>211</id>
@@ -864,32 +1368,19 @@ show_debug_message("testDone? -- " + string(testDone));
           </argument>
         </arguments>
       </action>
-    </event>
-    <event eventtype="9" enumb="32">
       <action>
         <libid>1</libid>
-        <id>603</id>
-        <kind>7</kind>
+        <id>424</id>
+        <kind>2</kind>
         <userelative>0</userelative>
         <isquestion>0</isquestion>
-        <useapplyto>-1</useapplyto>
-        <exetype>2</exetype>
+        <useapplyto>0</useapplyto>
+        <exetype>0</exetype>
         <functionname></functionname>
         <codestring></codestring>
         <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
-        <arguments>
-          <argument>
-            <kind>1</kind>
-            <string>if (global.currentLevel == 1 and global.currentSub == 0 and global.currentSubSub == 0)
-{
-    global.restarting = 1;
-    play_next_sequence();
-}
-</string>
-          </argument>
-        </arguments>
       </action>
     </event>
   </events>

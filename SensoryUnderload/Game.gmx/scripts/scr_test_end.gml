@@ -25,11 +25,12 @@ audio_play_sound(OkBoss, 1, false);
 while(audio_is_playing(OkBoss)){}
 */
 
+
+global.allowButtonPress = false;
+
+var len;
+len = audio_sound_length(snd_chunk_2);
 audio_play_sound(snd_chunk_2, 1, false);
-while(audio_is_playing(snd_chunk_2)){}
+global.soundLength = room_speed * len;
 
-audio_play_sound(snd_chunk_4, 1, false);
-while(audio_is_playing(snd_chunk_4)){}
-
-global.currentLevel = 0;
-scr_tutorial_1();
+global.exception = true;
